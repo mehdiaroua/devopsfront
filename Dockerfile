@@ -2,6 +2,7 @@
 FROM node:latest as node
 WORKDIR /app
 COPY package*.json ./
+RUN npm cache clean --force
 RUN npm install
 COPY . .
 RUN ng build --prod
